@@ -10,12 +10,33 @@
 
 export function minBy(array, cb) {
   // Your code goes here...
+  if (!array || array.length === 0) return undefined;
 
+  let min = array[0];
+  let minName = cb(array[0]);
+
+  for (let i = 0; i < array.length; i++) {
+    const name = cb(array[i]);
+      if (name < minName) {
+       min = array[i];
+        minName = name;
+      }
+    }
+  return min;
 }
 
 export function maxBy(array, cb) {
   // Your code goes here...
+  let max = -Infinity;
+  let age;
 
+  for (let person of array) {
+    if (cb(person) > max) {
+      max = cb(person);
+      age = person;
+    }
+  }
+  return age;
 }
 
 

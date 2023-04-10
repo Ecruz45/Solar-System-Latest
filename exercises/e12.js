@@ -6,8 +6,14 @@ import { data } from "../data/data";
 
 export function allPlanetsMoonsCount(data) {
   // Your code goes here...
+  return data.planets.reduce((acc, val) =>{
+    if(val.moonsCount > 0){
+      return acc + val.moonsCount;
+    }
+    return acc;
+  },0);
 }
-
+console.log(allPlanetsMoonsCount(data));
 
 
 // === TEST YOURSELF ===

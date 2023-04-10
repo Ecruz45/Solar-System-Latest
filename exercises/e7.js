@@ -6,8 +6,10 @@ import { data } from "../data/data";
 
 export function getPlanetsNamesWithMoons(data) {
   // Your code goes here...
+  return data.planets.filter(nam => nam.planets = nam.moons)
+  .map(nam => nam.name);
 }
-
+console.log(getPlanetsNamesWithMoons(data));
 
 
 // === TEST YOURSELF ===
